@@ -22,6 +22,12 @@ class MyApp extends StatelessWidget {
       title: 'Easy Food',
       theme: ThemeData(
         primarySwatch: Colors.lightGreen,
+        inputDecorationTheme: InputDecorationTheme(
+          fillColor: Colors.white70,
+          hoverColor: Colors.white70,
+          focusColor: Colors.white70,
+          filled: true
+          ),
       ),
       initialRoute: LOGIN,
       onGenerateRoute: (settings) => onGenerate(settings),
@@ -30,10 +36,10 @@ class MyApp extends StatelessWidget {
 }
 
 // Stream productsStream() async* {
-  //   Uri uri = Uri();
-  //   while (true) {
-  //     await Future.delayed(Duration(milliseconds: 500));
-  //     var someProduct = await http.get(uri);
-  //     yield someProduct;
-  //   }
-  // }
+//   Uri uri = Uri();
+//   while (true) {
+//     await Future.delayed(Duration(milliseconds: 500));
+//     var someProduct = await http.get(uri);
+//     yield someProduct;
+//   }
+// }

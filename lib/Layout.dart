@@ -11,7 +11,6 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-  Color _iconColor = Color.fromRGBO(0, 200, 120, 1.0);
   Widget _listTile({String name, Size size, Color color, IconData icon}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,7 +63,7 @@ class _MainLayoutState extends State<MainLayout> {
 
   @override
   Widget build(BuildContext context) {
-    Color _buttonColor = _iconColor;
+    Color _buttonColor = MAIN_COLOR;
     Size size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -73,7 +72,7 @@ class _MainLayoutState extends State<MainLayout> {
         Expanded(
           flex: 3,
           child: Container(
-            color: _iconColor,
+            color: MAIN_COLOR,
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -82,7 +81,7 @@ class _MainLayoutState extends State<MainLayout> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        color: _iconColor,
+                        color: MAIN_COLOR,
                         width: size.width * 0.16,
                         child: Image.asset(
                           'assets/main_icon.png',
@@ -142,7 +141,7 @@ class _MainLayoutState extends State<MainLayout> {
         Expanded(
           flex: 7,
           child: Container(
-            color: _iconColor,
+            color: MAIN_COLOR,
             child: widget.child,
           ),
         )
