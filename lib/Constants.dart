@@ -5,6 +5,7 @@ const String HOST = "localhost:8080";
 
 //Routes
 const String LOGIN = "/login";
+const String HOME_PAGE = "/home";
 const String ACTIVE_ORDER = "/activeOrder";
 const String ADD_NEW = "/addNewFood";
 const String ADD_ADMIN = "/addAdmin";

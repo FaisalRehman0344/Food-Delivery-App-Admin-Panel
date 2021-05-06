@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MainLayout extends StatefulWidget {
   final Widget child;
-  MainLayout({@required this.child});
+  MainLayout({this.child});
 
   @override
   _MainLayoutState createState() => _MainLayoutState();
@@ -25,6 +25,8 @@ class _MainLayoutState extends State<MainLayout> {
               {Navigator.pushNamed(context, ADD_ADMIN)}
             else if (name == "Statistical Reports")
               {Navigator.pushNamed(context, STATISTICAL_REPORT)}
+            else if (name == "Logout")
+              {Navigator.pushNamed(context, LOGIN)}
           },
           style: ButtonStyle(
             elevation: MaterialStateProperty.all(0),

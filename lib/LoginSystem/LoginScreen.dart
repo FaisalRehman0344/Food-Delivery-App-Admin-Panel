@@ -1,8 +1,5 @@
-import 'package:easy_food/Layout.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../Constants.dart';
 import '../Constants.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -21,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Form(
       key: key,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 100),
+        padding: const EdgeInsets.symmetric(horizontal: 70),
         child: TextFormField(
           onChanged: (val) {
             if (name == "Username") {
@@ -39,10 +36,9 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(
               fontFamily: "Times New Roman", fontWeight: FontWeight.w500),
           decoration: InputDecoration(
-            
               hintText: name,
               hintStyle: TextStyle(
-                color:Colors.black54,
+                  color: Colors.black54,
                   fontFamily: "Times New Roman",
                   fontSize: 16),
               border: OutlineInputBorder(
@@ -68,34 +64,46 @@ class _LoginScreenState extends State<LoginScreen> {
             color: Colors.green.shade300,
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text("Login",
-                  style:
-                      GoogleFonts.pacifico(color: Colors.white, fontSize: 60)),
-              myForm("Username", userKey),
-              myForm("Password", passwordKey),
-              ElevatedButton(
-                onPressed: () {
-                  if (userKey.currentState.validate() &&
-                      passwordKey.currentState.validate()) {
-                    print(_username + " " + _password);
-                  }
-                },
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30))),
-                  padding: MaterialStateProperty.all(
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 60)),
-                  backgroundColor: MaterialStateProperty.all(MAIN_COLOR),
-                ),
-                child: Text(
-                  "Login",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: "Times New Roman",
-                      fontWeight: FontWeight.w500,
-                      fontSize: 28),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15.0),
+                child: Text("Login",
+                    style:
+                        GoogleFonts.pacifico(color: Colors.white, fontSize: 60)),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: myForm("Username", userKey),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: myForm("Password", passwordKey),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (userKey.currentState.validate() &&
+                        passwordKey.currentState.validate()) {
+                      Navigator.of(context).pushNamed(HOME_PAGE);
+                    }
+                  },
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30))),
+                    padding: MaterialStateProperty.all(
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 60)),
+                    backgroundColor: MaterialStateProperty.all(MAIN_COLOR),
+                  ),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Times New Roman",
+                        fontWeight: FontWeight.w500,
+                        fontSize: 28),
+                  ),
                 ),
               )
             ],
